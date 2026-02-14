@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Baby 💘</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins;
+  background:linear-gradient(135deg,#ffd6e7,#d6ecff);
+  color:#333;
+  text-align:center;
+}
+
+section{
+  padding:60px 20px;
+}
+
+h1,h2{
+  font-family:'Dancing Script',cursive;
+}
+
+.card{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+
+/* reasons grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:12px;
+  max-width:800px;
+  margin:auto;
+}
+
+.reason{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+}
+
+/* parts list */
+.part{
+  background:white;
+  margin:12px auto;
+  padding:18px;
+  border-radius:14px;
+  max-width:650px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+/* gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+  margin-top:20px;
+}
+
+.gallery img{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 4px 14px rgba(0,0,0,.2);
+  transition:.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.08);
+}
+
+/* playlist */
+.playlist{
+  max-width:500px;
+  margin:12px auto;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+/* hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  animation:float 6s linear infinite;
+  font-size:18px;
+}
+
+@keyframes float{
+  to{transform:translateY(-110vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>Happy Valentine’s Day Baby 💙</h1>
+  <div class="card">
+    Baby, this is my little digital gift for you.  
+    A small way to show you how much I appreciate you, every single part of you, and all the moments we share.  
+    💌
+  </div>
+</section>
+
+<!-- PLAYLIST -->
+<section>
+  <h2>Your Playlist 🎵</h2>
+  <div class="playlist">
+    <iframe style="border-radius:12px" src="https://music.youtube.com/playlist?list=PLlGiF0kyMZXzx28TYCo9VGJrgT4gd0aac" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+</section>
+
+<!-- 50 REASONS -->
+<section>
+  <h2>50 Reasons I Choose You 💌</h2>
+  <p>Tap each card to reveal</p>
+  <div class="grid" id="reasons"></div>
+</section>
+
+<!-- FAVORITE PARTS -->
+<section>
+  <h2>My Favorite Things About You 😍</h2>
+
+  <div class="part">
+    <b>Your Eyes</b><br>
+    They show what you don’t always say out loud.
+  </div>
+
+  <div class="part">
+    <b>Your Smile</b><br>
+    It feels genuine and stays in my head.
+  </div>
+
+  <div class="part">
+    <b>Your Mind</b><br>
+    I love how you think deeply and process things carefully.
+  </div>
+
+  <div class="part">
+    <b>Your Voice</b><br>
+    Your voice relaxes me in ways words can’t explain.
+  </div>
+
+  <div class="part">
+    <b>Your Presence</b><br>
+    Even when quiet, it’s felt and comforting.
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section>
+  <h2>Our Memories Together 📸</h2>
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+  </div>
+</section>
+
+<!-- SURPRISE REVEAL -->
+<section>
+  <h2>Click to Reveal a Special Message 🎁</h2>
+  <button onclick="reveal()">Open 💖</button>
+  <div id="surprise" class="card" style="display:none; margin-top:20px;">
+    Baby, I really appreciate you — for your patience, your calm, your energy, and the way you just exist in my life.  
+    I’m so grateful for you 💙
+  </div>
+</section>
+
+<div class="card" style="font-size:12px; opacity:.6; margin:30px auto; max-width:300px;">
+  Crafted with love by Victoria Ituechi
+</div>
+
+<script>
+/* 50 reasons list */
+const reasons = [
+"I feel safe talking to you",
+"You’re real",
+"You’re honest",
+"You’re calm",
+"Your voice relaxes me",
+"You’re thoughtful",
+"You’re different",
+"You’re not fake",
+"You make moments feel good",
+"You listen",
+
+"You’re emotionally unique",
+"You’re natural",
+"You’re not boring",
+"You’re interesting",
+"You’re layered",
+"You matter to me",
+"You’re important",
+"I feel connected to you",
+"I feel comfortable with you",
+"You’re worth effort",
+
+"You’re worth patience",
+"I like your smile",
+"I like your eyes",
+"I like your energy",
+"I like your presence",
+"I like your mind",
+"I like your honesty",
+"I like your flaws too",
+"You make me curious",
+"You make me think",
+
+"I feel seen",
+"I feel calm with you",
+"I feel soft with you",
+"I feel close to you",
+"You’re my person",
+"You’re special",
+"You’re valued",
+"You’re appreciated",
+"You’re chosen",
+"You’re cared for",
+
+"You’re worth understanding",
+"You’re worth keeping",
+"You’re worth showing up for",
+"You’re worth loving",
+"You’re worth choosing",
+"I enjoy you",
+"I respect you",
+"I admire you",
+"I like us",
+"I choose you 💙"
+];
+
+const grid = document.getElementById("reasons");
+reasons.forEach((text,i)=>{
+  const div=document.createElement("div");
+  div.className="reason";
+  div.innerHTML="Reason "+(i+1);
+  div.onclick=()=>div.innerHTML=text;
+  grid.appendChild(div);
+});
+
+/* surprise message reveal */
+function reveal(){
+  document.getElementById("surprise").style.display="block";
+}
+
+/* floating hearts animation */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💙";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(3+Math.random()*3)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},600);
+</script>
+
+</body>
+</html>
